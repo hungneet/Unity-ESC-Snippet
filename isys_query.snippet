@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Isystem QueryForeach</Title>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+using Components;
+using Unity.Collections;
+using Unity.Entities;
+
+namespace Systems
+{
+	public partial struct NameSystem : ISystem
+	{
+		public void OnUpdate(ref SystemState state)
+		{
+			foreach (var (_, e) in SystemAPI.Query&lt;RefRO&gt;().WithEntityAccess())
+            {
+            }
+		}
+    }
+}
+			
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
+
